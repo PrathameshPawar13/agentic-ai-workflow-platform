@@ -7,76 +7,69 @@
 ![Tests](https://img.shields.io/badge/Tests-Pytest-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-A portfolio-grade AI engineering project for automated CSV analysis using deterministic data tools and LLM-generated insights.
+An AI-powered workflow platform that analyzes CSV datasets using deterministic data-processing tools and generates grounded business insights with an LLM.
 
-The system combines traditional data analysis with an LLM insight layer. Deterministic tools compute schema summaries, missing values, descriptive statistics, trend analysis, anomaly detection, and charts. A Groq-hosted open model then generates a structured business insight report grounded in those computed outputs.
+The project demonstrates a practical pattern for building reliable AI applications: statistical computations are performed by deterministic tools, while the LLM is used only to summarize validated outputs into a structured insight report.
 
-## Why this project matters
+---
 
-This project demonstrates how to build reliable AI workflows where LLMs do not directly invent analysis. Instead, deterministic tools compute facts, and the LLM explains the validated outputs.
+## Overview
 
-This design is relevant for:
+Modern AI applications often fail when language models are asked to perform calculations, infer trends, or detect anomalies directly from raw data. This project addresses that problem by separating computation from explanation.
 
-- AI Engineer roles
-- AI Agent Engineer roles
-- Data Scientist roles
-- AI Architect roles
-- Quant/Data Analytics platform roles
+The platform first runs a deterministic analysis pipeline over an uploaded CSV file. It then passes the validated analysis result to an LLM, which generates a concise insight report based only on the computed outputs.
 
-## Features
+This makes the system more reliable, explainable, and suitable for real-world analytical workflows.
 
-- CSV upload and analysis
-- Dataset schema inspection
-- Missing-value summary
-- Basic data cleaning
-- Descriptive statistics
-- IQR-based anomaly detection
-- Deterministic trend analysis using linear regression slope
-- Chart generation with Matplotlib
-- Groq-based LLM insight generation
-- FastAPI backend
-- Streamlit frontend
-- Pydantic response schemas
-- Pytest test suite
+---
 
-## Evaluation Harness
+## Key Capabilities
 
-The project includes an evaluation module for measuring workflow reliability.   
+- Upload and analyze CSV files
+- Inspect dataset schema and column types
+- Summarize missing values
+- Apply basic data cleaning
+- Generate descriptive statistics
+- Detect anomalies using the IQR method
+- Analyze numeric trends using linear regression slope
+- Generate charts for numeric columns
+- Produce structured LLM-generated insight reports
+- Serve the workflow through a FastAPI backend
+- Provide an interactive Streamlit UI
+- Validate outputs with Pydantic schemas
+- Test core workflow components with Pytest
+- Evaluate workflow reliability using custom metrics
 
-## Architecture
+---
+
+## System Architecture
 
 ```text
-CSV Upload
+CSV File
    |
    v
-Data Loader
+Data Loading
    |
    v
-Schema Inspector -> Missing Value Analyzer -> Data Cleaner
+Schema Inspection
    |
    v
-Statistics Tool -> Trend Analyzer -> Anomaly Detector -> Chart Generator
+Missing Value Analysis
+   |
+   v
+Data Cleaning
+   |
+   v
+Statistics + Trend Analysis + Anomaly Detection
+   |
+   v
+Chart Generation
    |
    v
 Validation Layer
    |
    v
-LLM Insight Agent
+LLM Insight Generation
    |
    v
 FastAPI / Streamlit Output
-```
-
-## Screenshots
-
-Screenshots will be added for:
-
-- Streamlit workflow UI
-- FastAPI Swagger documentation
-- Evaluation harness output
-
-```text
-screenshots/
-├── streamlit-ui.png
-├── fastapi-docs.png
-└── evaluation-output.png
