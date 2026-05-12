@@ -4,7 +4,6 @@ streamlit
 pandas
 numpy
 pydantic
-python-dotenv
 matplotlib
 scikit-learn
 openai
@@ -12,3 +11,5 @@ langchain
 langgraph
 pytest
 python-multipart
+groq
+python-dotenv
