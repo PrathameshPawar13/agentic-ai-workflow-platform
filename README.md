@@ -32,6 +32,10 @@ This design is relevant for:
 - Pydantic response schemas
 - Pytest test suite
 
+## Evaluation Harness
+
+The project includes an evaluation module for measuring workflow reliability.   
+
 ## Architecture
 
 ```text
@@ -54,3 +58,4 @@ LLM Insight Agent
    |
    v
 FastAPI / Streamlit Output
+
