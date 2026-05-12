@@ -10,10 +10,16 @@ class DatasetSummary(BaseModel):
     categorical_columns: List[str]
 
 
+class TrendResult(BaseModel):
+    slope: float
+    direction: str
+
+
 class AnalysisResult(BaseModel):
     dataset_summary: DatasetSummary
     missing_values: Dict[str, int]
     statistics: Dict[str, Dict[str, float]]
+    trends: Dict[str, TrendResult]
     anomalies: List[Dict[str, Any]]
     charts: List[str]
     status: str = "success"

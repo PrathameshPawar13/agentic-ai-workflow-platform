@@ -27,7 +27,11 @@ Rules:
 - Do not include markdown.
 - Do not include explanations outside JSON.
 - Do not invent values.
-- Use only the statistics, anomalies, and schema provided below.
+- Use only the statistics, trends, anomalies, and schema provided below.
+- Only describe trends that appear in the "trends" field.
+- Do not infer trends directly from raw row order unless provided in the "trends" field.
+- When discussing anomalies, reference the anomaly column and row_index if available.
+- Mention dataset limitations when row count is small.
 - Keep the output concise and professional.
 
 Analysis result:

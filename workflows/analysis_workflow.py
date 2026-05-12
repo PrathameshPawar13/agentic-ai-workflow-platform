@@ -6,7 +6,7 @@ from tools.anomaly_detector import detect_anomalies_iqr
 from tools.chart_generator import generate_charts
 from tools.validator import validate_analysis_result
 from app.schemas import AnalysisResult
-
+from tools.trend_analyzer import analyze_trends
 
 def run_analysis_workflow(file_path: str) -> tuple[AnalysisResult, list[str]]:
     """
@@ -29,6 +29,9 @@ def run_analysis_workflow(file_path: str) -> tuple[AnalysisResult, list[str]]:
     logs.append("Generating descriptive statistics")
     statistics = generate_statistics(cleaned_df)
 
+    logs.append("Analyzing trends")
+    trends = analyze_trends(cleaned_df)
+
     logs.append("Detecting anomalies")
     anomalies = detect_anomalies_iqr(cleaned_df)
 
@@ -36,12 +39,13 @@ def run_analysis_workflow(file_path: str) -> tuple[AnalysisResult, list[str]]:
     charts = generate_charts(cleaned_df)
 
     result = AnalysisResult(
-        dataset_summary=dataset_summary,
-        missing_values=missing_values,
-        statistics=statistics,
-        anomalies=anomalies,
-        charts=charts,
-        status="success"
+    dataset_summary=dataset_summary,
+    missing_values=missing_values,
+    statistics=statistics,
+    trends=trends,
+    anomalies=anomalies,
+    charts=charts,
+    status="success"
     )
 
     logs.append("Validating analysis result")
