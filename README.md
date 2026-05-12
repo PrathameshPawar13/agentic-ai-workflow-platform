@@ -1,5 +1,12 @@
 # Agentic AI Workflow Automation Platform
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
+![LLM](https://img.shields.io/badge/LLM-Groq%20%2B%20Llama-purple)
+![Tests](https://img.shields.io/badge/Tests-Pytest-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 A portfolio-grade AI engineering project for automated CSV analysis using deterministic data tools and LLM-generated insights.
 
 The system combines traditional data analysis with an LLM insight layer. Deterministic tools compute schema summaries, missing values, descriptive statistics, trend analysis, anomaly detection, and charts. A Groq-hosted open model then generates a structured business insight report grounded in those computed outputs.
@@ -58,4 +65,18 @@ LLM Insight Agent
    |
    v
 FastAPI / Streamlit Output
+```
 
+## Screenshots
+
+Screenshots will be added for:
+
+- Streamlit workflow UI
+- FastAPI Swagger documentation
+- Evaluation harness output
+
+```text
+screenshots/
+├── streamlit-ui.png
+├── fastapi-docs.png
+└── evaluation-output.png
